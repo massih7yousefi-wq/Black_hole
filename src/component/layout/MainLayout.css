@@ -1,0 +1,42 @@
+.app-shell {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+}
+.space-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+.nebula {
+    position: absolute;
+    width: 700px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.14;
+    transform: rotate(-25deg);
+}
+.nebula-one {
+    top: 5%;
+    left: -12%;
+    background: radial-gradient( ellipse, rgba(82, 103, 220, 0.7), rgba(82, 103, 220, 0.25) 45%, transparent 75% );
+}
+.nebula-two {
+    right: -15%;
+    bottom: 5%;
+    width: 600px;
+    height: 400px;
+    transform: rotate(25deg);
+    background: radial-gradient( ellipse, rgba(139, 73, 190, 0.55), rgba(139, 73, 190, 0.18) 45%, transparent 75% );
+}
+.page-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+}
