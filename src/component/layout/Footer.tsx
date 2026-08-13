@@ -12,7 +12,7 @@ function Footer() {
 
                 <div className="footer-meta">
                     <span>Exploring the unknown.</span>
-                    <span>© 2026 BlackHole</span>
+                    <span>Â© 2026 BlackHole</span>
                 </div>
             </div>
         </footer>
