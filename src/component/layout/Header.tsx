@@ -1,40 +1,85 @@
-﻿//imports--------------------------------------
+﻿// imports --------------------------------------
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-//component---------------------------------
+
+// component ------------------------------------
 function Header() {
     return (
         <header className="site-header">
+
             <div className="header-container">
-                <NavLink to="/" className="brand">
-                    <span className="brand-mark">◉</span>
+
+                {/* ================= BRAND ================= */}
+
+                <NavLink
+                    to="/"
+                    className="brand"
+                    aria-label="BlackHole Home"
+                >
+
+                    <span className="brand-logo">
+
+                        <span className="logo-glow" />
+
+                        <span className="logo-ring logo-ring-outer" />
+
+                        <span className="logo-ring logo-ring-inner" />
+
+                        <span className="logo-core" />
+
+                    </span>
+
 
                     <span className="brand-content">
-                        <span className="brand-name">BLACKHOLE</span>
-                        <span className="brand-owner">by Elendil</span>
+
+                        <span className="brand-name">
+                            BLACKHOLE
+                        </span>
+
+                        <span className="brand-owner">
+                            BY ELENDIL
+                        </span>
+
                     </span>
+
                 </NavLink>
 
-                <nav className="main-nav" aria-label="Main navigation">
+
+                {/* ================= NAVIGATION ================= */}
+
+                <nav
+                    className="main-nav"
+                    aria-label="Main navigation"
+                >
+
                     <NavLink
                         to="/"
+                        end
                         className={({ isActive }) =>
-                            isActive ? "nav-link active" : "nav-link"
+                            isActive
+                                ? "nav-link active"
+                                : "nav-link"
                         }
                     >
-                        Home
+                        <span>Home</span>
                     </NavLink>
+
 
                     <NavLink
                         to="/giveaway"
                         className={({ isActive }) =>
-                            isActive ? "nav-link active" : "nav-link"
+                            isActive
+                                ? "nav-link active"
+                                : "nav-link"
                         }
                     >
-                        Giveaway
+                        <span>Giveaway</span>
                     </NavLink>
+
                 </nav>
+
             </div>
+
         </header>
     );
 }
