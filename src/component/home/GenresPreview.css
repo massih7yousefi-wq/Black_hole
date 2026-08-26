@@ -1,0 +1,667 @@
+/* =========================================================
+   GENRES PREVIEW
+========================================================= */
+
+.genres-preview {
+    position: relative;
+
+    padding:
+            150px 0;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.genres-preview-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.genres-preview-header {
+    display: grid;
+
+    grid-template-columns:
+            minmax(0, 1.1fr)
+            minmax(280px, .7fr);
+
+    align-items: end;
+
+    gap: 80px;
+
+    margin-bottom: 65px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.genres-preview-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color:
+            var(--color-accent);
+
+    font-size:
+            var(--font-size-xs);
+
+    font-weight: 600;
+
+    letter-spacing: .22em;
+}
+
+
+.genres-preview-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--color-accent)
+            );
+
+    box-shadow:
+            0 0 10px
+            rgba(139,156,255,.6);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.genres-preview-title {
+    margin: 0;
+
+    color:
+            var(--color-text);
+
+    font-size:
+            clamp(
+                    3.5rem,
+                    7vw,
+                    6.5rem
+            );
+
+    font-weight: 800;
+
+    line-height: .86;
+
+    letter-spacing: -.065em;
+}
+
+
+.genres-preview-title span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+            1px
+            rgba(255,255,255,.35);
+
+    text-shadow:
+            0 0 40px
+            rgba(139,156,255,.1);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.genres-preview-description {
+    max-width: 430px;
+
+    margin: 0 0 4px;
+
+    color:
+            var(--color-text-secondary);
+
+    font-size:
+            var(--font-size-md);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.genres-preview-grid {
+    display: grid;
+
+    grid-template-columns:
+            repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.genre-card {
+    position: relative;
+
+    min-height: 210px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border:
+            1px solid
+            rgba(255,255,255,.055);
+
+    border-radius:
+            var(--radius-lg);
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.032),
+                    rgba(255,255,255,.008)
+            );
+
+    backdrop-filter:
+            blur(10px);
+
+    -webkit-backdrop-filter:
+            blur(10px);
+
+    transition:
+            transform .45s
+            cubic-bezier(.22,1,.36,1),
+            border-color .35s ease,
+            background .35s ease,
+            box-shadow .35s ease;
+}
+
+
+/* =========================================================
+   CARD LIGHT
+========================================================= */
+
+.genre-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: -30%;
+    bottom: -60%;
+
+    width: 70%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(110,120,255,.12),
+                    transparent 68%
+            );
+
+    filter:
+            blur(30px);
+
+    opacity: .35;
+
+    transition:
+            transform .6s ease,
+            opacity .5s ease;
+}
+
+
+/* =========================================================
+   TOP LINE
+========================================================= */
+
+.genre-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 28px;
+
+    width: 0;
+    height: 1px;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    var(--color-accent),
+                    transparent
+            );
+
+    box-shadow:
+            0 0 12px
+            rgba(139,156,255,.5);
+
+    transition:
+            width .45s
+            cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.genre-card:hover {
+    transform:
+            translateY(-7px);
+
+    border-color:
+            rgba(139,156,255,.2);
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(139,156,255,.055),
+                    rgba(255,255,255,.012)
+            );
+
+    box-shadow:
+            0 20px 45px
+            rgba(0,0,0,.25),
+
+            0 0 35px
+            rgba(100,110,255,.05);
+}
+
+
+.genre-card:hover::before {
+    opacity: 1;
+
+    transform:
+            translate(25%, -15%)
+            scale(1.25);
+}
+
+
+.genre-card:hover::after {
+    width: 90px;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.genre-card-number {
+    position: relative;
+
+    z-index: 2;
+
+    align-self: flex-end;
+
+    color:
+            rgba(255,255,255,.18);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.genre-card-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.genre-card-name {
+    color:
+            var(--color-text);
+
+    font-size:
+            clamp(
+                    1.15rem,
+                    2vw,
+                    1.45rem
+            );
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    transition:
+            letter-spacing .4s ease,
+            color .3s ease;
+}
+
+
+.genre-card:hover .genre-card-name {
+    letter-spacing:
+            .17em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.genre-card-description {
+    max-width: 290px;
+
+    color:
+            var(--color-text-muted);
+
+    font-size:
+            var(--font-size-xs);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.genre-card-arrow {
+    position: absolute;
+
+    right: 26px;
+    bottom: 25px;
+
+    z-index: 2;
+
+    color:
+            rgba(255,255,255,.3);
+
+    font-size: 18px;
+
+    transition:
+            transform .35s ease,
+            color .3s ease;
+}
+
+
+.genre-card:hover .genre-card-arrow {
+    color:
+            var(--color-accent);
+
+    transform:
+            translate(3px, -3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.genres-preview-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+
+.genres-preview-line {
+    width: 80px;
+
+    height: 1px;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(139,156,255,.25)
+            );
+}
+
+
+.genres-preview-line:last-child {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(139,156,255,.25),
+                    transparent
+            );
+}
+
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.genres-preview-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color:
+            var(--color-text-muted);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .2em;
+
+    transition:
+            color .3s ease;
+}
+
+
+.genres-preview-link span {
+    font-size: 15px;
+
+    transition:
+            transform .3s ease;
+}
+
+
+.genres-preview-link:hover {
+    color:
+            var(--color-text);
+}
+
+
+.genres-preview-link:hover span {
+    transform:
+            translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .genres-preview {
+        padding:
+                110px 0;
+    }
+
+
+    .genres-preview-header {
+        grid-template-columns:
+                1fr;
+
+        gap: 25px;
+    }
+
+
+    .genres-preview-description {
+        max-width: 560px;
+    }
+
+
+    .genres-preview-grid {
+        grid-template-columns:
+                repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .genres-preview {
+        padding:
+                90px 0;
+    }
+
+
+    .genres-preview-header {
+        margin-bottom:
+                45px;
+    }
+
+
+    .genres-preview-title {
+        font-size:
+                clamp(
+                        3rem,
+                        14vw,
+                        4.5rem
+                );
+    }
+
+
+    .genres-preview-grid {
+        grid-template-columns:
+                1fr;
+
+        gap: 12px;
+    }
+
+
+    .genre-card {
+        min-height: 190px;
+
+        padding: 25px;
+    }
+
+
+    .genres-preview-footer {
+        margin-top:
+                40px;
+    }
+
+
+    .genres-preview-line {
+        width:
+                35px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .genres-preview-title {
+        font-size:
+                2.8rem;
+    }
+
+
+    .genres-preview-footer {
+        gap:
+                10px;
+    }
+
+
+    .genres-preview-line {
+        width:
+                22px;
+    }
+
+
+    .genres-preview-link {
+        font-size:
+                8px;
+
+        letter-spacing:
+                .14em;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .genre-card,
+    .genre-card::before,
+    .genre-card::after,
+    .genre-card-name,
+    .genre-card-arrow,
+    .genres-preview-link span {
+        transition: none;
+    }
+}

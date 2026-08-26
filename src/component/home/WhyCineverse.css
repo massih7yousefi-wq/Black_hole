@@ -1,0 +1,568 @@
+/* =========================================================
+   WHY CINEVERSE
+========================================================= */
+
+.why-cineverse {
+    position: relative;
+
+    padding:
+            140px 0
+            130px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.why-cineverse::before {
+    content: "";
+
+    position: absolute;
+
+    top: 15%;
+    left: 50%;
+
+    width: 600px;
+    height: 300px;
+
+    transform:
+            translateX(-50%);
+
+    background:
+            radial-gradient(
+                    ellipse,
+                    rgba(110, 120, 255, .06),
+                    transparent 70%
+            );
+
+    filter:
+            blur(70px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.why-cineverse-container {
+    width:
+            min(
+                    1200px,
+                    calc(100% - 40px)
+            );
+
+    margin:
+            0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.why-cineverse-header {
+    max-width: 700px;
+
+    margin-bottom:
+            70px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.why-cineverse-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom:
+            20px;
+
+    color:
+            var(--color-accent);
+
+    font-size:
+            10px;
+
+    font-weight: 600;
+
+    letter-spacing:
+            .24em;
+}
+
+
+.why-cineverse-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--color-accent)
+            );
+
+    box-shadow:
+            0 0 10px
+            rgba(139,156,255,.5);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.why-cineverse-title {
+    margin: 0;
+
+    color:
+            var(--color-text);
+
+    font-size:
+            clamp(
+                    2.8rem,
+                    6vw,
+                    5.5rem
+            );
+
+    font-weight: 800;
+
+    line-height: .9;
+
+    letter-spacing:
+            -.06em;
+}
+
+
+.why-cineverse-title span {
+    display: block;
+
+    color:
+            transparent;
+
+    -webkit-text-stroke:
+            1px
+            rgba(255,255,255,.3);
+
+    text-shadow:
+            0 0 35px
+            rgba(139,156,255,.08);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.why-cineverse-description {
+    max-width: 540px;
+
+    margin:
+            28px 0 0;
+
+    color:
+            var(--color-text-secondary);
+
+    font-size:
+            var(--font-size-md);
+
+    line-height:
+            1.8;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.why-cineverse-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   FEATURE CARD
+========================================================= */
+
+.why-feature {
+    position: relative;
+
+    min-height: 320px;
+
+    padding:
+            30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    border:
+            1px solid
+            rgba(255,255,255,.07);
+
+    border-radius:
+            18px;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.035),
+                    rgba(255,255,255,.008)
+            );
+
+    transition:
+            transform .45s
+            cubic-bezier(.22,1,.36,1),
+
+            border-color .35s ease,
+
+            box-shadow .35s ease,
+
+            background .35s ease;
+}
+
+
+/* =========================================================
+   CARD LIGHT
+========================================================= */
+
+.why-feature::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(120,130,255,.14),
+                    transparent 70%
+            );
+
+    filter:
+            blur(20px);
+
+    opacity: .45;
+
+    transition:
+            transform .6s ease,
+            opacity .4s ease;
+}
+
+
+/* =========================================================
+   CARD BORDER LIGHT
+========================================================= */
+
+.why-feature::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(139,156,255,.12),
+                    transparent 30%,
+                    transparent 70%,
+                    rgba(139,156,255,.05)
+            );
+
+    opacity: .35;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.why-feature:hover {
+    transform:
+            translateY(-8px);
+
+    border-color:
+            rgba(139,156,255,.2);
+
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(139,156,255,.055),
+                    rgba(255,255,255,.012)
+            );
+
+    box-shadow:
+            0 25px 70px
+            rgba(0,0,0,.3),
+
+            0 0 40px
+            rgba(100,110,255,.05);
+}
+
+
+.why-feature:hover::before {
+    transform:
+            scale(1.4);
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.why-feature-number {
+    position: absolute;
+
+    top: 28px;
+    left: 30px;
+
+    color:
+            rgba(255,255,255,.25);
+
+    font-size:
+            11px;
+
+    font-weight: 600;
+
+    letter-spacing:
+            .16em;
+}
+
+
+/* =========================================================
+   LINE
+========================================================= */
+
+.why-feature-line {
+    position: absolute;
+
+    top: 37px;
+    left: 65px;
+
+    width: 55px;
+    height: 1px;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(139,156,255,.45),
+                    transparent
+            );
+
+    transition:
+            width .4s ease;
+}
+
+
+.why-feature:hover .why-feature-line {
+    width:
+            90px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.why-feature-title {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 14px;
+
+    color:
+            var(--color-text);
+
+    font-size:
+            1.35rem;
+
+    font-weight: 700;
+
+    letter-spacing:
+            .12em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.why-feature-description {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 300px;
+
+    margin: 0;
+
+    color:
+            var(--color-text-muted);
+
+    font-size:
+            var(--font-size-sm);
+
+    line-height:
+            1.7;
+}
+
+
+/* =========================================================
+   SYMBOL
+========================================================= */
+
+.why-feature-symbol {
+    position: absolute;
+
+    right: 28px;
+    bottom: 25px;
+
+    color:
+            rgba(139,156,255,.3);
+
+    font-size:
+            25px;
+
+    font-weight: 300;
+
+    transition:
+            transform .4s ease,
+            color .3s ease;
+}
+
+
+.why-feature:hover .why-feature-symbol {
+    color:
+            var(--color-accent);
+
+    transform:
+            rotate(90deg);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .why-cineverse {
+        padding:
+                110px 0;
+    }
+
+
+    .why-cineverse-features {
+        grid-template-columns:
+            1fr;
+
+        gap: 14px;
+    }
+
+
+    .why-feature {
+        min-height:
+                260px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .why-cineverse {
+        padding:
+                90px 0;
+    }
+
+
+    .why-cineverse-container {
+        width:
+                calc(100% - 24px);
+    }
+
+
+    .why-cineverse-header {
+        margin-bottom:
+                45px;
+    }
+
+
+    .why-cineverse-title {
+        font-size:
+                clamp(
+                        2.5rem,
+                        13vw,
+                        4rem
+                );
+    }
+
+
+    .why-cineverse-description {
+        font-size:
+                14px;
+    }
+
+
+    .why-feature {
+        min-height:
+                240px;
+
+        padding:
+                26px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .why-feature,
+    .why-feature::before,
+    .why-feature-line,
+    .why-feature-symbol {
+        transition:
+                none;
+    }
+}
