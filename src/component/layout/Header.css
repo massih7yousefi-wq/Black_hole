@@ -1,6 +1,7 @@
-/* =========================================================
-   HEADER
-========================================================= */
+
+    /* =========================================================
+       SITE HEADER
+    ========================================================= */
 
 .site-header {
     position: sticky;
@@ -14,13 +15,13 @@
     background:
             linear-gradient(
                     180deg,
-                    rgba(3, 5, 12, .88),
-                    rgba(3, 5, 12, .68)
+                    rgba(5, 6, 12, 0.94),
+                    rgba(5, 6, 12, 0.78)
             );
 
     border-bottom:
             1px solid
-            rgba(255, 255, 255, .07);
+            rgba(255, 255, 255, 0.06);
 
     backdrop-filter:
             blur(20px);
@@ -29,12 +30,14 @@
             blur(20px);
 
     box-shadow:
-            0 8px 35px
-            rgba(0, 0, 0, .18);
+            0 10px 40px
+            rgba(0, 0, 0, 0.25);
 }
 
 
-/* subtle light line */
+/* =========================================================
+   CINEMATIC LIGHT LINE
+========================================================= */
 
 .site-header::after {
     content: "";
@@ -50,14 +53,14 @@
     background:
             linear-gradient(
                     90deg,
-                    transparent 0%,
-                    rgba(139, 156, 255, .12) 25%,
-                    rgba(139, 156, 255, .3) 50%,
-                    rgba(139, 156, 255, .12) 75%,
-                    transparent 100%
+                    transparent,
+                    rgba(139, 156, 255, 0.08),
+                    rgba(139, 156, 255, 0.4),
+                    rgba(139, 156, 255, 0.08),
+                    transparent
             );
 
-    opacity: .5;
+    opacity: 0.7;
 
     pointer-events: none;
 }
@@ -76,8 +79,7 @@
 
     min-height: 76px;
 
-    margin:
-            0 auto;
+    margin: 0 auto;
 
     display: flex;
 
@@ -85,7 +87,7 @@
 
     justify-content: space-between;
 
-    gap: 32px;
+    gap: 30px;
 }
 
 
@@ -100,16 +102,16 @@
 
     gap: 13px;
 
+    flex-shrink: 0;
+
     color: inherit;
 
     text-decoration: none;
-
-    flex-shrink: 0;
 }
 
 
 /* =========================================================
-   BLACK HOLE LOGO
+   LOGO
 ========================================================= */
 
 .brand-logo {
@@ -127,40 +129,41 @@
     isolation: isolate;
 
     transition:
-            transform .5s
-            cubic-bezier(.22, 1, .36, 1);
+            transform 0.5s
+            cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* Logo ambient glow */
+/* =========================================================
+   LOGO GLOW
+========================================================= */
 
 .logo-glow {
     position: absolute;
 
-    inset: -10px;
+    inset: -12px;
 
     border-radius: 50%;
 
     background:
             radial-gradient(
                     circle,
-                    rgba(126, 110, 255, .18),
+                    rgba(139, 156, 255, 0.22),
                     transparent 68%
             );
 
-    filter:
-            blur(6px);
+    filter: blur(7px);
 
-    opacity: .55;
+    opacity: 0.5;
 
     transition:
-            opacity .4s ease,
-            transform .5s ease;
+            opacity 0.4s ease,
+            transform 0.5s ease;
 }
 
 
 /* =========================================================
-   OUTER RING
+   LOGO RINGS
 ========================================================= */
 
 .logo-ring {
@@ -172,34 +175,33 @@
 }
 
 
-/* Main accretion ring */
+/* ---------------------------------------------------------
+   OUTER RING
+--------------------------------------------------------- */
 
 .logo-ring-outer {
     inset: 1px;
 
     background:
             conic-gradient(
-                    from 15deg,
+                    from 0deg,
 
                     transparent 0deg,
 
-                    rgba(100, 111, 255, .25) 55deg,
+                    rgba(139, 156, 255, 0.15) 45deg,
 
-                    rgba(156, 91, 255, .95) 105deg,
+                    rgba(139, 156, 255, 0.95) 95deg,
 
-                    rgba(217, 126, 255, .75) 135deg,
+                    rgba(190, 145, 255, 0.75) 130deg,
 
-                    rgba(95, 106, 255, .2) 190deg,
+                    transparent 190deg,
 
-                    transparent 240deg,
+                    rgba(100, 120, 255, 0.8) 270deg,
 
-                    rgba(116, 93, 240, .8) 300deg,
-
-                    transparent 350deg
+                    transparent 330deg
             );
 
-    filter:
-            blur(1px);
+    filter: blur(1px);
 
     animation:
             logo-spin
@@ -209,21 +211,23 @@
 }
 
 
-/* Inner ring */
+/* ---------------------------------------------------------
+   INNER RING
+--------------------------------------------------------- */
 
 .logo-ring-inner {
     inset: 6px;
 
     border:
             1px solid
-            rgba(195, 191, 255, .7);
+            rgba(210, 215, 255, 0.7);
 
     box-shadow:
             0 0 6px
-            rgba(145, 135, 255, .75),
+            rgba(139, 156, 255, 0.7),
 
-            0 0 14px
-            rgba(115, 90, 230, .35);
+            0 0 15px
+            rgba(100, 110, 240, 0.3);
 
     animation:
             logo-pulse
@@ -249,18 +253,42 @@
 
     background:
             radial-gradient(
-                    circle,
-                    #000 0%,
-                    #000 68%,
-                    #03030a 100%
+                    circle at 35% 30%,
+                    #25283d 0%,
+                    #05060c 48%,
+                    #000 75%
             );
 
     box-shadow:
-            0 0 8px
+            0 0 10px
             rgba(0, 0, 0, 1),
 
-            0 0 16px
-            rgba(56, 46, 130, .65);
+            0 0 18px
+            rgba(90, 90, 180, 0.6);
+}
+
+
+/* ---------------------------------------------------------
+   CORE REFLECTION
+--------------------------------------------------------- */
+
+.logo-core-shine {
+    position: absolute;
+
+    top: 3px;
+    left: 4px;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+            rgba(255, 255, 255, 0.35);
+
+    filter: blur(1px);
+
+    opacity: 0.7;
 }
 
 
@@ -284,18 +312,17 @@
 
 
 .brand:hover .logo-ring-outer {
-    animation-duration:
-            3s;
+    animation-duration: 3s;
 }
 
 
 .brand:hover .logo-ring-inner {
     box-shadow:
             0 0 8px
-            rgba(170, 160, 255, .95),
+            rgba(180, 185, 255, 0.95),
 
-            0 0 22px
-            rgba(125, 100, 255, .55);
+            0 0 24px
+            rgba(125, 135, 255, 0.55);
 }
 
 
@@ -308,7 +335,7 @@
 
     flex-direction: column;
 
-    gap: 3px;
+    gap: 4px;
 }
 
 
@@ -320,8 +347,7 @@
 
     font-weight: 700;
 
-    letter-spacing:
-            .22em;
+    letter-spacing: 0.22em;
 
     line-height: 1;
 }
@@ -331,17 +357,15 @@
     color:
             var(--color-text-muted);
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 500;
 
-    letter-spacing:
-            .18em;
+    letter-spacing: 0.2em;
 
     line-height: 1;
 
-    text-transform:
-            uppercase;
+    text-transform: uppercase;
 }
 
 
@@ -354,19 +378,19 @@
 
     align-items: center;
 
-    gap: 4px;
+    gap: 3px;
 
     padding: 4px;
 
     border:
             1px solid
-            rgba(255,255,255,.045);
+            rgba(255, 255, 255, 0.05);
 
     border-radius:
             var(--radius-full);
 
     background:
-            rgba(255,255,255,.018);
+            rgba(255, 255, 255, 0.018);
 }
 
 
@@ -383,12 +407,12 @@
 
     justify-content: center;
 
-    min-width: 82px;
+    min-width: 78px;
 
     height: 38px;
 
     padding:
-            0 16px;
+            0 15px;
 
     color:
             var(--color-text-muted);
@@ -403,11 +427,43 @@
     border-radius:
             var(--radius-full);
 
+    overflow: hidden;
+
     transition:
-            color .25s ease,
-            background-color .25s ease,
-            box-shadow .25s ease,
-            transform .25s ease;
+            color 0.25s ease,
+            background 0.25s ease,
+            transform 0.25s ease;
+}
+
+
+/* =========================================================
+   NAV HOVER GLOW
+========================================================= */
+
+.nav-link::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+            radial-gradient(
+                    circle at center,
+                    rgba(139, 156, 255, 0.1),
+                    transparent 70%
+            );
+
+    opacity: 0;
+
+    transform:
+            scale(0.8);
+
+    transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
 }
 
 
@@ -416,7 +472,18 @@
             var(--color-text);
 
     background:
-            rgba(255,255,255,.035);
+            rgba(255, 255, 255, 0.035);
+
+    transform:
+            translateY(-1px);
+}
+
+
+.nav-link:hover::before {
+    opacity: 1;
+
+    transform:
+            scale(1);
 }
 
 
@@ -429,18 +496,17 @@
             var(--color-text);
 
     background:
-            rgba(139,156,255,.08);
+            rgba(139, 156, 255, 0.08);
 
     box-shadow:
             inset 0 0 20px
-            rgba(139,156,255,.035),
-
-            0 0 18px
-            rgba(85,90,180,.05);
+            rgba(139, 156, 255, 0.035);
 }
 
 
-/* active light */
+/* =========================================================
+   ACTIVE INDICATOR
+========================================================= */
 
 .nav-link.active::after {
     content: "";
@@ -462,43 +528,113 @@
 
     box-shadow:
             0 0 8px
-            rgba(139,156,255,.75);
+            rgba(139, 156, 255, 0.8);
 
     transform:
-            translateX(-50%);
+            translateX(-50%)
+            scaleX(1);
+
+    animation:
+            active-indicator
+            0.3s
+            ease-out;
 }
 
 
 /* =========================================================
-   NAV HOVER EFFECT
+   SEARCH BUTTON
 ========================================================= */
 
-.nav-link::before {
-    content: "";
+.search-button {
+    position: relative;
 
-    position: absolute;
+    width: 40px;
+    height: 40px;
 
-    inset: 0;
+    flex-shrink: 0;
 
-    border-radius:
-            inherit;
+    display: grid;
+
+    place-items: center;
+
+    color:
+            var(--color-text-muted);
+
+    text-decoration: none;
+
+    border:
+            1px solid
+            rgba(255, 255, 255, 0.06);
+
+    border-radius: 50%;
 
     background:
-            radial-gradient(
-                    circle at center,
-                    rgba(139,156,255,.08),
-                    transparent 70%
-            );
-
-    opacity: 0;
+            rgba(255, 255, 255, 0.025);
 
     transition:
-            opacity .25s ease;
+            color 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
 }
 
 
-.nav-link:hover::before {
-    opacity: 1;
+.search-button:hover {
+    color:
+            var(--color-text);
+
+    background:
+            rgba(139, 156, 255, 0.08);
+
+    border-color:
+            rgba(139, 156, 255, 0.2);
+
+    box-shadow:
+            0 0 20px
+            rgba(100, 110, 255, 0.1);
+
+    transform:
+            translateY(-1px);
+}
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.search-icon {
+    width: 17px;
+    height: 17px;
+
+    display: block;
+}
+
+
+.search-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke:
+            currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    transition:
+            transform 0.3s ease;
+}
+
+
+.search-button:hover .search-icon svg {
+    transform:
+            scale(1.08)
+            rotate(-5deg);
 }
 
 
@@ -524,10 +660,10 @@
 
     0%,
     100% {
-        opacity: .55;
+        opacity: 0.55;
 
         transform:
-                scale(.94);
+                scale(0.94);
     }
 
     50% {
@@ -539,20 +675,39 @@
 }
 
 
+@keyframes active-indicator {
+
+    from {
+        opacity: 0;
+
+        transform:
+                translateX(-50%)
+                scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+                translateX(-50%)
+                scaleX(1);
+    }
+}
+
+
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
 ========================================================= */
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
 
     .header-container {
         width:
-                min(
-                        100% - 24px,
-                        1200px
-                );
+                calc(100% - 24px);
 
         min-height: 68px;
+
+        gap: 14px;
     }
 
 
@@ -568,8 +723,8 @@
     }
 
 
-    .brand-content {
-        gap: 0;
+    .brand-owner {
+        display: none;
     }
 
 
@@ -577,19 +732,12 @@
         font-size: 13px;
 
         letter-spacing:
-                .18em;
-    }
-
-
-    .brand-owner {
-        display: none;
+                0.18em;
     }
 
 
     .main-nav {
         gap: 2px;
-
-        padding: 3px;
     }
 
 
@@ -599,22 +747,40 @@
         height: 34px;
 
         padding:
-                0 11px;
+                0 10px;
 
         font-size: 12px;
+    }
+
+
+    .search-button {
+        width: 36px;
+        height: 36px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL SCREENS
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 520px) {
 
     .header-container {
-        width:
-                calc(100% - 18px);
+        gap: 8px;
+    }
+
+
+    .main-nav {
+        padding: 3px;
+    }
+
+
+    .nav-link {
+        padding:
+                0 8px;
+
+        font-size: 11px;
     }
 
 
@@ -627,13 +793,39 @@
         font-size: 12px;
 
         letter-spacing:
-                .14em;
+                0.14em;
+    }
+
+
+    .search-button {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .brand-name {
+        font-size: 11px;
     }
 
 
     .nav-link {
         padding:
-                0 8px;
+                0 6px;
+
+        font-size: 10px;
+    }
+
+
+    .search-button {
+        width: 32px;
+        height: 32px;
     }
 }
 
@@ -645,11 +837,17 @@
 @media (prefers-reduced-motion: reduce) {
 
     .logo-ring-outer,
-    .logo-ring-inner {
+    .logo-ring-inner,
+    .nav-link.active::after {
         animation: none;
     }
 
-    .brand-logo {
+
+    .brand-logo,
+    .nav-link,
+    .search-button,
+    .search-icon svg {
         transition: none;
     }
 }
+

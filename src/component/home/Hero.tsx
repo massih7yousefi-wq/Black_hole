@@ -5,6 +5,22 @@ function Hero() {
     return (
         <section className="hero">
 
+            {/* ================= BACKGROUND ================= */}
+
+            <div className="hero-background" aria-hidden="true">
+                <div className="hero-glow hero-glow-one" />
+                <div className="hero-glow hero-glow-two" />
+
+                <div className="hero-grid" />
+
+                <span className="hero-star hero-star-1" />
+                <span className="hero-star hero-star-2" />
+                <span className="hero-star hero-star-3" />
+                <span className="hero-star hero-star-4" />
+                <span className="hero-star hero-star-5" />
+            </div>
+
+
             <div className="hero-container container">
 
                 {/* ================= CONTENT ================= */}
@@ -12,97 +28,175 @@ function Hero() {
                 <div className="hero-content">
 
                     <span className="hero-eyebrow">
-                        A SPACE BEYOND THE ORDINARY
+                        YOUR NEXT STORY AWAITS
                     </span>
 
+
                     <h1 className="hero-title">
-                        BLACK
-                        <span>HOLE</span>
+
+                        DISCOVER
+                        <span>YOUR NEXT</span>
+                        MOVIE
+
                     </h1>
 
+
                     <p className="hero-description">
-                        A small universe created by Elendil.
-                        Explore the unknown, discover new worlds,
-                        and enter the BlackHole giveaway.
+                        Explore movies and series worth watching.
+                        Discover new stories, unforgettable characters,
+                        and your next favorite title.
                     </p>
+
 
                     <div className="hero-actions">
 
                         <Link
-                            to="/giveaway"
+                            to="/movies"
                             className="hero-button hero-button-primary"
                         >
-                            Enter Giveaway
+                            Explore Movies
                         </Link>
 
-                        <a
-                            href="#about"
+
+                        <Link
+                            to="/series"
                             className="hero-button hero-button-secondary"
                         >
-                            Explore
-                        </a>
+                            Browse Series
+                        </Link>
+
+                    </div>
+
+
+                    {/* ================= META ================= */}
+
+                    <div className="hero-meta">
+
+                        <div className="hero-meta-item">
+                            <span className="hero-meta-number">
+                                10K+
+                            </span>
+
+                            <span className="hero-meta-label">
+                                Titles
+                            </span>
+                        </div>
+
+
+                        <div className="hero-meta-divider" />
+
+
+                        <div className="hero-meta-item">
+                            <span className="hero-meta-number">
+                                500+
+                            </span>
+
+                            <span className="hero-meta-label">
+                                Series
+                            </span>
+                        </div>
+
+
+                        <div className="hero-meta-divider" />
+
+
+                        <div className="hero-meta-item">
+                            <span className="hero-meta-number">
+                                4K
+                            </span>
+
+                            <span className="hero-meta-label">
+                                Quality
+                            </span>
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                {/* ================= BLACK HOLE ================= */}
+                {/* ================= VISUAL ================= */}
 
                 <div
                     className="hero-visual"
                     aria-hidden="true"
                 >
 
-                    <div className="black-hole-space">
+                    <div className="cinema-space">
 
                         {/* Ambient glow */}
-                        <div className="space-glow" />
 
-                        {/* Stars */}
-                        <span className="star star-1" />
-                        <span className="star star-2" />
-                        <span className="star star-3" />
-                        <span className="star star-4" />
-                        <span className="star star-5" />
-                        <span className="star star-6" />
-                        <span className="star star-7" />
-                        <span className="star star-8" />
+                        <div className="cinema-glow" />
 
-                        {/* Main black hole */}
-                        <div className="black-hole">
 
-                            {/* Outer energy */}
-                            <div className="black-hole-energy" />
+                        {/* Floating particles */}
 
-                            {/* Outer glow */}
-                            <div className="black-hole-outer-ring" />
+                        <span className="cinema-particle particle-1" />
+                        <span className="cinema-particle particle-2" />
+                        <span className="cinema-particle particle-3" />
+                        <span className="cinema-particle particle-4" />
+                        <span className="cinema-particle particle-5" />
 
-                            {/* Main accretion disk */}
-                            <div className="black-hole-disk" />
 
-                            {/* Hot inner disk */}
-                            <div className="black-hole-inner-ring" />
+                        {/* Main cinematic object */}
 
-                            {/* Photon ring */}
-                            <div className="black-hole-photon-ring" />
+                        <div className="cinema-orbit orbit-one" />
+                        <div className="cinema-orbit orbit-two" />
 
-                            {/* Event horizon */}
-                            <div className="black-hole-horizon">
 
-                                <div className="black-hole-core" />
+                        <div className="cinema-poster">
+
+                            <div className="poster-shine" />
+
+                            <div className="poster-content">
+
+                                <span className="poster-label">
+                                    FEATURED
+                                </span>
+
+                                <span className="poster-title">
+                                    YOUR
+                                </span>
+
+                                <span className="poster-title">
+                                    STORY
+                                </span>
+
+                                <span className="poster-year">
+                                    MOVIES · SERIES
+                                </span>
 
                             </div>
 
                         </div>
 
 
-                        {/* Falling particles */}
+                        {/* Floating info cards */}
 
-                        <span className="falling-particle falling-1" />
-                        <span className="falling-particle falling-2" />
-                        <span className="falling-particle falling-3" />
-                        <span className="falling-particle falling-4" />
+                        <div className="floating-card floating-card-rating">
+
+                            <span className="floating-card-icon">
+                                ★
+                            </span>
+
+                            <span>
+                                <strong>9.2</strong>
+                                <small>Rating</small>
+                            </span>
+
+                        </div>
+
+
+                        <div className="floating-card floating-card-type">
+
+                            <span className="floating-dot" />
+
+                            <span>
+                                <strong>Trending</strong>
+                                <small>Right now</small>
+                            </span>
+
+                        </div>
 
                     </div>
 

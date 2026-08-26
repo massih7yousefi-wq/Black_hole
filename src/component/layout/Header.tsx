@@ -14,7 +14,7 @@ function Header() {
                 <NavLink
                     to="/"
                     className="brand"
-                    aria-label="BlackHole Home"
+                    aria-label="Cineverse Home"
                 >
 
                     <span className="brand-logo">
@@ -25,7 +25,9 @@ function Header() {
 
                         <span className="logo-ring logo-ring-inner" />
 
-                        <span className="logo-core" />
+                        <span className="logo-core">
+                            <span className="logo-core-shine" />
+                        </span>
 
                     </span>
 
@@ -33,11 +35,11 @@ function Header() {
                     <span className="brand-content">
 
                         <span className="brand-name">
-                            BLACKHOLE
+                            CINEVERSE
                         </span>
 
                         <span className="brand-owner">
-                            BY ELENDIL
+                            MOVIES & SERIES
                         </span>
 
                     </span>
@@ -66,17 +68,73 @@ function Header() {
 
 
                     <NavLink
-                        to="/giveaway"
+                        to="/movies"
                         className={({ isActive }) =>
                             isActive
                                 ? "nav-link active"
                                 : "nav-link"
                         }
                     >
-                        <span>Giveaway</span>
+                        <span>Movies</span>
+                    </NavLink>
+
+
+                    <NavLink
+                        to="/series"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "nav-link active"
+                                : "nav-link"
+                        }
+                    >
+                        <span>Series</span>
+                    </NavLink>
+
+
+                    <NavLink
+                        to="/genres"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "nav-link active"
+                                : "nav-link"
+                        }
+                    >
+                        <span>Genres</span>
                     </NavLink>
 
                 </nav>
+
+
+                {/* ================= SEARCH ================= */}
+
+                <NavLink
+                    to="/search"
+                    className="search-button"
+                    aria-label="Search movies and series"
+                >
+
+                    <span className="search-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <circle
+                                cx="11"
+                                cy="11"
+                                r="6.5"
+                            />
+
+                            <path
+                                d="M16 16L21 21"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                </NavLink>
 
             </div>
 

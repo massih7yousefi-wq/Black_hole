@@ -5,14 +5,197 @@
 .hero {
     position: relative;
 
-    min-height: calc(100vh - 76px);
+    min-height:
+            calc(100vh - 76px);
 
     display: flex;
+
     align-items: center;
 
     overflow: hidden;
 
     isolation: isolate;
+
+    background:
+            radial-gradient(
+                    circle at 75% 50%,
+                    rgba(90, 90, 180, .08),
+                    transparent 35%
+            );
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+}
+
+
+.hero-glow-one {
+    width: 520px;
+    height: 520px;
+
+    top: 10%;
+    right: 5%;
+
+    background:
+            rgba(100, 105, 230, .12);
+
+    animation:
+            background-float-one
+            9s
+            ease-in-out
+            infinite;
+}
+
+
+.hero-glow-two {
+    width: 380px;
+    height: 380px;
+
+    bottom: -15%;
+    left: 10%;
+
+    background:
+            rgba(150, 90, 230, .07);
+
+    animation:
+            background-float-two
+            11s
+            ease-in-out
+            infinite;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .2;
+
+    background-image:
+            linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+            );
+
+    background-size:
+            70px 70px;
+
+    mask-image:
+            radial-gradient(
+                    circle at center,
+                    black,
+                    transparent 75%
+            );
+
+    -webkit-mask-image:
+            radial-gradient(
+                    circle at center,
+                    black,
+                    transparent 75%
+            );
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.hero-star {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+            rgba(220,225,255,.8);
+
+    box-shadow:
+            0 0 10px
+            rgba(150,165,255,.8);
+
+    animation:
+            star-twinkle
+            4s
+            ease-in-out
+            infinite;
+}
+
+
+.hero-star-1 {
+    top: 18%;
+    left: 8%;
+}
+
+
+.hero-star-2 {
+    top: 32%;
+    left: 42%;
+
+    animation-delay: -1s;
+}
+
+
+.hero-star-3 {
+    top: 14%;
+    right: 20%;
+
+    animation-delay: -2s;
+}
+
+
+.hero-star-4 {
+    bottom: 22%;
+    right: 12%;
+
+    animation-delay: -3s;
+}
+
+
+.hero-star-5 {
+    bottom: 12%;
+    left: 35%;
+
+    animation-delay: -1.5s;
 }
 
 
@@ -21,7 +204,8 @@
 ========================================================= */
 
 .hero-container {
-    min-height: calc(100vh - 76px);
+    min-height:
+            calc(100vh - 76px);
 
     display: grid;
 
@@ -31,7 +215,8 @@
 
     align-items: center;
 
-    gap: var(--space-7);
+    gap:
+            var(--space-7);
 }
 
 
@@ -48,10 +233,14 @@
 
     animation:
             hero-enter
-            1s
-            cubic-bezier(.22, 1, .36, 1);
+            .9s
+            cubic-bezier(.22,1,.36,1);
 }
 
+
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .hero-eyebrow {
     display: inline-flex;
@@ -60,22 +249,26 @@
 
     gap: 10px;
 
-    margin-bottom: var(--space-4);
+    margin-bottom:
+            var(--space-4);
 
-    color: var(--color-accent);
+    color:
+            var(--color-accent);
 
-    font-size: var(--font-size-xs);
+    font-size:
+            var(--font-size-xs);
 
     font-weight: 600;
 
-    letter-spacing: .24em;
+    letter-spacing:
+            .22em;
 }
 
 
 .hero-eyebrow::before {
     content: "";
 
-    width: 30px;
+    width: 32px;
     height: 1px;
 
     background:
@@ -87,25 +280,31 @@
 
     box-shadow:
             0 0 10px
-            rgba(139, 156, 255, .7);
+            rgba(139,156,255,.7);
 }
 
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .hero-title {
     margin: 0;
 
     font-size:
             clamp(
-                    4.5rem,
-                    9vw,
-                    8rem
+                    4rem,
+                    8vw,
+                    7.5rem
             );
 
-    line-height: .84;
+    line-height:
+            .84;
 
     font-weight: 800;
 
-    letter-spacing: -.07em;
+    letter-spacing:
+            -.075em;
 }
 
 
@@ -116,13 +315,17 @@
 
     -webkit-text-stroke:
             1px
-            rgba(255,255,255,.45);
+            rgba(255,255,255,.42);
 
     text-shadow:
-            0 0 40px
+            0 0 45px
             rgba(139,156,255,.12);
 }
 
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .hero-description {
     max-width: 500px;
@@ -138,12 +341,13 @@
     font-size:
             var(--font-size-md);
 
-    line-height: 1.8;
+    line-height:
+            1.8;
 }
 
 
 /* =========================================================
-   BUTTONS
+   ACTIONS
 ========================================================= */
 
 .hero-actions {
@@ -151,16 +355,21 @@
 
     align-items: center;
 
-    gap: var(--space-3);
+    gap:
+            var(--space-3);
 
-    margin-top: var(--space-6);
+    margin-top:
+            var(--space-6);
 }
 
 
 .hero-button {
+    position: relative;
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     min-height: 46px;
@@ -178,10 +387,13 @@
 
     font-weight: 600;
 
+    overflow: hidden;
+
     transition:
             transform .3s ease,
             box-shadow .3s ease,
-            border-color .3s ease;
+            border-color .3s ease,
+            background .3s ease;
 }
 
 
@@ -191,8 +403,13 @@
 }
 
 
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
 .hero-button-primary {
-    color: #05060b;
+    color:
+            #05060b;
 
     background:
             var(--color-text);
@@ -203,12 +420,48 @@
 }
 
 
+.hero-button-primary::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.35),
+                    transparent
+            );
+
+    transform:
+            skewX(-20deg);
+
+    transition:
+            left .6s ease;
+}
+
+
+.hero-button-primary:hover::before {
+    left: 130%;
+}
+
+
 .hero-button-primary:hover {
     box-shadow:
             0 0 40px
-            rgba(139,156,255,.3);
+            rgba(139,156,255,.28);
 }
 
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
 
 .hero-button-secondary {
     color:
@@ -240,6 +493,68 @@
 
 
 /* =========================================================
+   HERO META
+========================================================= */
+
+.hero-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top:
+            34px;
+
+    animation:
+            meta-enter
+            1s
+            .3s
+            both;
+}
+
+
+.hero-meta-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.hero-meta-number {
+    color:
+            var(--color-text);
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.hero-meta-label {
+    color:
+            var(--color-text-muted);
+
+    font-size: 10px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+
+.hero-meta-divider {
+    width: 1px;
+    height: 28px;
+
+    background:
+            rgba(255,255,255,.1);
+}
+
+
+/* =========================================================
    VISUAL
 ========================================================= */
 
@@ -255,10 +570,10 @@
 
 
 /* =========================================================
-   BLACK HOLE SPACE
+   CINEMA SPACE
 ========================================================= */
 
-.black-hole-space {
+.cinema-space {
     position: relative;
 
     width:
@@ -274,7 +589,7 @@
     place-items: center;
 
     animation:
-            space-floating
+            cinema-floating
             7s
             ease-in-out
             infinite;
@@ -282,30 +597,30 @@
 
 
 /* =========================================================
-   AMBIENT SPACE GLOW
+   CINEMA GLOW
 ========================================================= */
 
-.space-glow {
+.cinema-glow {
     position: absolute;
 
-    width: 85%;
-    height: 85%;
+    width: 75%;
+    height: 75%;
 
     border-radius: 50%;
 
     background:
             radial-gradient(
                     circle,
-                    rgba(104,91,220,.12),
-                    rgba(71,75,170,.05) 35%,
-                    transparent 70%
+                    rgba(115,105,230,.18),
+                    rgba(80,80,180,.07) 40%,
+                    transparent 72%
             );
 
     filter:
-            blur(45px);
+            blur(40px);
 
     animation:
-            glow-pulse
+            cinema-glow-pulse
             6s
             ease-in-out
             infinite;
@@ -313,460 +628,432 @@
 
 
 /* =========================================================
-   BLACK HOLE
+   ORBITS
 ========================================================= */
 
-.black-hole {
-    position: relative;
-
-    width: 360px;
-    height: 360px;
-
-    display: grid;
-
-    place-items: center;
-}
-
-
-/* =========================================================
-   OUTER ENERGY
-========================================================= */
-
-.black-hole-energy {
+.cinema-orbit {
     position: absolute;
 
-    width: 135%;
-    height: 135%;
-
-    border-radius: 50%;
-
-    background:
-            conic-gradient(
-                    from 0deg,
-
-                    transparent 0deg,
-
-                    transparent 30deg,
-
-                    rgba(84,92,255,.06) 55deg,
-
-                    rgba(122,88,235,.18) 80deg,
-
-                    transparent 115deg,
-
-                    transparent 175deg,
-
-                    rgba(94,101,245,.1) 230deg,
-
-                    rgba(165,100,255,.15) 270deg,
-
-                    transparent 320deg
-            );
-
-    filter:
-            blur(20px);
-
-    animation:
-            energy-spin
-            18s
-            linear
-            infinite;
-}
-
-
-/* =========================================================
-   OUTER RING
-========================================================= */
-
-.black-hole-outer-ring {
-    position: absolute;
-
-    width: 125%;
-    height: 125%;
-
-    border-radius: 50%;
-
-    background:
-            conic-gradient(
-                    from 180deg,
-
-                    transparent 0deg,
-
-                    rgba(83,97,255,.08) 35deg,
-
-                    rgba(133,91,255,.65) 75deg,
-
-                    rgba(180,105,255,.8) 105deg,
-
-                    rgba(101,109,255,.25) 145deg,
-
-                    transparent 190deg,
-
-                    transparent 250deg,
-
-                    rgba(118,96,245,.5) 300deg,
-
-                    transparent 340deg
-            );
-
-    filter:
-            blur(14px);
-
-    animation:
-            ring-rotate
-            11s
-            linear
-            infinite;
-}
-
-
-/* =========================================================
-   MAIN ACCRETION DISK
-========================================================= */
-
-.black-hole-disk {
-    position: absolute;
-
-    width: 116%;
-    height: 44%;
-
-    border-radius: 50%;
-
-    background:
-            conic-gradient(
-                    from 20deg,
-
-                    transparent 0deg,
-
-                    rgba(72,82,255,.15) 25deg,
-
-                    rgba(102,109,255,.8) 65deg,
-
-                    rgba(162,92,255,.95) 95deg,
-
-                    rgba(221,132,255,1) 120deg,
-
-                    rgba(129,101,255,.65) 155deg,
-
-                    transparent 200deg,
-
-                    transparent 250deg,
-
-                    rgba(102,89,240,.75) 290deg,
-
-                    transparent 340deg
-            );
-
-    filter:
-            blur(5px);
-
-    box-shadow:
-            0 0 35px
-            rgba(121,99,255,.3);
-
-    animation:
-            disk-rotate
-            8s
-            linear
-            infinite;
-}
-
-
-/* =========================================================
-   INNER RING
-========================================================= */
-
-.black-hole-inner-ring {
-    position: absolute;
-
-    width: 91%;
-    height: 30%;
-
-    border-radius: 50%;
-
-    background:
-            conic-gradient(
-                    from 180deg,
-
-                    transparent 0deg,
-
-                    rgba(90,105,255,.7) 50deg,
-
-                    rgba(188,106,255,1) 100deg,
-
-                    rgba(255,182,235,1) 125deg,
-
-                    rgba(115,115,255,.85) 165deg,
-
-                    transparent 220deg,
-
-                    rgba(100,90,240,.65) 290deg,
-
-                    transparent 340deg
-            );
-
-    filter:
-            blur(2px);
-
-    animation:
-            inner-spin
-            4.5s
-            linear
-            infinite;
-}
-
-
-/* =========================================================
-   PHOTON RING
-========================================================= */
-
-.black-hole-photon-ring {
-    position: absolute;
-
-    width: 65%;
-    height: 65%;
-
-    border-radius: 50%;
+    width: 72%;
+    height: 25%;
 
     border:
-            2px solid
-            rgba(211,199,255,.8);
+            1px solid
+            rgba(150,155,255,.16);
+
+    border-radius: 50%;
+
+    transform:
+            rotate(-18deg);
 
     box-shadow:
+            0 0 20px
+            rgba(120,120,255,.05);
+}
 
-            0 0 7px
-            rgba(211,199,255,.95),
 
-            0 0 18px
-            rgba(156,139,255,.75),
+.orbit-one {
+    animation:
+            orbit-spin-one
+            12s
+            linear
+            infinite;
+}
 
-            0 0 40px
-            rgba(117,93,240,.5),
 
-            inset 0 0 12px
-            rgba(166,150,255,.35);
+.orbit-two {
+    width: 82%;
+    height: 32%;
+
+    transform:
+            rotate(28deg);
+
+    border-color:
+            rgba(180,140,255,.1);
 
     animation:
-            photon-pulse
-            2.8s
-            ease-in-out
+            orbit-spin-two
+            15s
+            linear
             infinite;
+}
+
+
+/* =========================================================
+   CINEMA POSTER
+========================================================= */
+
+.cinema-poster {
+    position: relative;
 
     z-index: 5;
-}
 
+    width: 245px;
+    height: 365px;
 
-/* =========================================================
-   EVENT HORIZON
-========================================================= */
+    overflow: hidden;
 
-.black-hole-horizon {
-    position: absolute;
+    border:
+            1px solid
+            rgba(255,255,255,.15);
 
-    width: 58%;
-    height: 58%;
-
-    border-radius: 50%;
-
-    display: grid;
-
-    place-items: center;
+    border-radius:
+            14px;
 
     background:
-            radial-gradient(
-                    circle,
-                    #000 0%,
-                    #000 62%,
-                    #02020a 76%,
-                    transparent 100%
+            linear-gradient(
+                    145deg,
+                    #17192b,
+                    #080911 55%,
+                    #030308
             );
 
     box-shadow:
+            0 35px 80px
+            rgba(0,0,0,.6),
 
-            0 0 30px
-            rgba(0,0,0,1),
+            0 0 50px
+            rgba(110,100,230,.12);
 
-            0 0 65px
-            rgba(20,15,65,.95),
+    transform:
+            rotate(5deg);
 
-            0 0 100px
-            rgba(73,62,180,.3);
+    transition:
+            transform .5s
+            cubic-bezier(.22,1,.36,1);
+}
 
-    z-index: 4;
+
+.cinema-space:hover .cinema-poster {
+    transform:
+            rotate(1deg)
+            translateY(-8px)
+            scale(1.02);
 }
 
 
 /* =========================================================
-   CORE
+   POSTER LIGHT
 ========================================================= */
 
-.black-hole-core {
-    width: 84%;
-    height: 84%;
+.cinema-poster::before {
+    content: "";
 
-    border-radius: 50%;
+    position: absolute;
+
+    inset: 0;
 
     background:
             radial-gradient(
-                    circle,
-                    #000 0%,
-                    #000 68%,
-                    #010108 82%,
-                    #03020a 100%
+                    circle at 30% 25%,
+                    rgba(170,160,255,.35),
+                    transparent 30%
+            ),
+
+            linear-gradient(
+                    145deg,
+                    transparent 30%,
+                    rgba(255,255,255,.025),
+                    transparent 70%
+            );
+}
+
+
+.poster-shine {
+    position: absolute;
+
+    top: -20%;
+    left: -80%;
+
+    width: 45%;
+    height: 150%;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.15),
+                    transparent
             );
 
-    box-shadow:
-            inset 0 0 35px #000,
-            0 0 35px #000;
-}
-
-
-/* =========================================================
-   FALLING PARTICLES
-========================================================= */
-
-.falling-particle {
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-            #c5caff;
-
-    box-shadow:
-            0 0 8px
-            #9aa8ff,
-
-            0 0 20px
-            rgba(137,151,255,.8);
-
-    z-index: 10;
-}
-
-
-.falling-1 {
-    left: 20%;
-    top: 35%;
+    transform:
+            rotate(18deg);
 
     animation:
-            fall-one
-            4s
-            linear
-            infinite;
-}
-
-
-.falling-2 {
-    right: 18%;
-    top: 28%;
-
-    animation:
-            fall-two
-            5s
-            linear
-            infinite;
-}
-
-
-.falling-3 {
-    left: 27%;
-    bottom: 30%;
-
-    animation:
-            fall-three
-            4.5s
-            linear
-            infinite;
-}
-
-
-.falling-4 {
-    right: 25%;
-    bottom: 34%;
-
-    animation:
-            fall-four
-            5.5s
-            linear
-            infinite;
-}
-
-
-/* =========================================================
-   STARS
-========================================================= */
-
-.star {
-    position: absolute;
-
-    width: 3px;
-    height: 3px;
-
-    border-radius: 50%;
-
-    background:
-            #dce0ff;
-
-    box-shadow:
-            0 0 9px
-            rgba(175,187,255,.9);
-
-    animation:
-            star-blink
-            4s
+            poster-shine
+            6s
             ease-in-out
             infinite;
 }
 
 
-.star-1 {
-    left: 8%;
-    top: 28%;
+/* =========================================================
+   POSTER CONTENT
+========================================================= */
+
+.poster-content {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 28px;
+
+    background:
+            linear-gradient(
+                    transparent 30%,
+                    rgba(0,0,0,.2) 45%,
+                    rgba(0,0,0,.9) 100%
+            );
 }
 
-.star-2 {
-    left: 20%;
-    top: 12%;
-    animation-delay: -2s;
+
+.poster-label {
+    margin-bottom: 14px;
+
+    color:
+            var(--color-accent);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .25em;
 }
 
-.star-3 {
-    right: 10%;
+
+.poster-title {
+    color:
+            #fff;
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    line-height: .8;
+
+    letter-spacing: -.06em;
+}
+
+
+.poster-year {
+    margin-top: 18px;
+
+    color:
+            rgba(255,255,255,.45);
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+            10px 14px;
+
+    border:
+            1px solid
+            rgba(255,255,255,.08);
+
+    border-radius:
+            12px;
+
+    background:
+            rgba(10,11,20,.72);
+
+    backdrop-filter:
+            blur(12px);
+
+    -webkit-backdrop-filter:
+            blur(12px);
+
+    box-shadow:
+            0 15px 35px
+            rgba(0,0,0,.3);
+}
+
+
+.floating-card strong {
+    display: block;
+
+    color:
+            var(--color-text);
+
+    font-size: 13px;
+}
+
+
+.floating-card small {
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+            var(--color-text-muted);
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RATING CARD
+========================================================= */
+
+.floating-card-rating {
     top: 22%;
-    animation-delay: -1s;
-}
 
-.star-4 {
     right: 5%;
-    top: 48%;
-    animation-delay: -3s;
+
+    animation:
+            floating-rating
+            5s
+            ease-in-out
+            infinite;
 }
 
-.star-5 {
-    right: 17%;
-    bottom: 22%;
-    animation-delay: -1.5s;
+
+.floating-card-icon {
+    color:
+            #c9c5ff;
+
+    font-size: 18px;
+
+    text-shadow:
+            0 0 10px
+            rgba(150,140,255,.8);
 }
 
-.star-6 {
-    left: 11%;
-    bottom: 27%;
-    animation-delay: -2.5s;
+
+/* =========================================================
+   TRENDING CARD
+========================================================= */
+
+.floating-card-type {
+    left: 3%;
+
+    bottom: 23%;
+
+    animation:
+            floating-type
+            6s
+            ease-in-out
+            infinite;
 }
 
-.star-7 {
-    left: 34%;
-    top: 5%;
-    animation-delay: -.5s;
+
+.floating-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+            var(--color-accent);
+
+    box-shadow:
+            0 0 10px
+            rgba(139,156,255,.9);
 }
 
-.star-8 {
-    right: 31%;
-    bottom: 8%;
-    animation-delay: -3.5s;
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.cinema-particle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+            rgba(190,195,255,.8);
+
+    box-shadow:
+            0 0 12px
+            rgba(150,160,255,.8);
+}
+
+
+.particle-1 {
+    top: 18%;
+    left: 20%;
+
+    animation:
+            particle-float-one
+            5s
+            ease-in-out
+            infinite;
+}
+
+
+.particle-2 {
+    top: 32%;
+    right: 13%;
+
+    animation:
+            particle-float-two
+            6s
+            ease-in-out
+            infinite;
+}
+
+
+.particle-3 {
+    bottom: 20%;
+    left: 18%;
+
+    animation:
+            particle-float-three
+            5.5s
+            ease-in-out
+            infinite;
+}
+
+
+.particle-4 {
+    bottom: 12%;
+    right: 25%;
+
+    animation:
+            particle-float-four
+            7s
+            ease-in-out
+            infinite;
+}
+
+
+.particle-5 {
+    top: 10%;
+    right: 35%;
+
+    animation:
+            particle-float-five
+            4.5s
+            ease-in-out
+            infinite;
 }
 
 
@@ -792,114 +1079,138 @@
 }
 
 
-@keyframes space-floating {
+@keyframes meta-enter {
+
+    from {
+        opacity: 0;
+
+        transform:
+                translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+                translateY(0);
+    }
+}
+
+
+@keyframes cinema-floating {
 
     0%,
     100% {
         transform:
-                translateY(0)
+                translateY(0);
+    }
+
+    50% {
+        transform:
+                translateY(-12px);
+    }
+}
+
+
+@keyframes cinema-glow-pulse {
+
+    0%,
+    100% {
+        opacity: .45;
+
+        transform:
+                scale(.9);
+    }
+
+    50% {
+        opacity: .9;
+
+        transform:
+                scale(1.08);
+    }
+}
+
+
+@keyframes orbit-spin-one {
+
+    from {
+        transform:
+                rotate(-18deg)
                 scale(1);
     }
 
     50% {
         transform:
-                translateY(-10px)
-                scale(1.015);
+                rotate(162deg)
+                scale(1.05);
+    }
+
+    to {
+        transform:
+                rotate(342deg)
+                scale(1);
     }
 }
 
 
-@keyframes glow-pulse {
+@keyframes orbit-spin-two {
+
+    from {
+        transform:
+                rotate(28deg);
+    }
+
+    to {
+        transform:
+                rotate(-332deg);
+    }
+}
+
+
+@keyframes poster-shine {
+
+    0% {
+        left: -80%;
+    }
+
+    35%,
+    100% {
+        left: 150%;
+    }
+}
+
+
+@keyframes floating-rating {
 
     0%,
     100% {
-        opacity: .45;
-        transform: scale(.9);
+        transform:
+                translateY(0);
     }
 
     50% {
-        opacity: .9;
-        transform: scale(1.08);
+        transform:
+                translateY(-9px);
     }
 }
 
 
-@keyframes energy-spin {
-
-    from {
-        transform:
-                rotate(0deg);
-    }
-
-    to {
-        transform:
-                rotate(360deg);
-    }
-}
-
-
-@keyframes ring-rotate {
-
-    from {
-        transform:
-                rotate(0deg);
-    }
-
-    to {
-        transform:
-                rotate(-360deg);
-    }
-}
-
-
-@keyframes disk-rotate {
-
-    from {
-        transform:
-                rotate(0deg);
-    }
-
-    to {
-        transform:
-                rotate(360deg);
-    }
-}
-
-
-@keyframes inner-spin {
-
-    from {
-        transform:
-                rotate(360deg);
-    }
-
-    to {
-        transform:
-                rotate(0deg);
-    }
-}
-
-
-@keyframes photon-pulse {
+@keyframes floating-type {
 
     0%,
     100% {
-        opacity: .55;
-
         transform:
-                scale(.96);
+                translateY(0);
     }
 
     50% {
-        opacity: 1;
-
         transform:
-                scale(1.04);
+                translateY(8px);
     }
 }
 
 
-@keyframes star-blink {
+@keyframes star-twinkle {
 
     0%,
     100% {
@@ -918,102 +1229,107 @@
 }
 
 
-/* =========================================================
-   PARTICLE MOTION
-========================================================= */
+@keyframes background-float-one {
 
-@keyframes fall-one {
-
-    0% {
-        opacity: 0;
-
-        transform:
-                translate(-60px, -20px)
-                scale(.4);
-    }
-
-    20% {
-        opacity: 1;
-    }
-
+    0%,
     100% {
-        opacity: 0;
-
         transform:
-                translate(80px, 70px)
-                scale(.1);
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(-30px, 25px);
     }
 }
 
 
-@keyframes fall-two {
+@keyframes background-float-two {
 
-    0% {
-        opacity: 0;
-
-        transform:
-                translate(70px, -40px)
-                scale(.5);
-    }
-
-    20% {
-        opacity: 1;
-    }
-
+    0%,
     100% {
-        opacity: 0;
-
         transform:
-                translate(-90px, 85px)
-                scale(.1);
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(30px, -20px);
     }
 }
 
 
-@keyframes fall-three {
+@keyframes particle-float-one {
 
-    0% {
-        opacity: 0;
-
-        transform:
-                translate(-70px, 40px)
-                scale(.4);
-    }
-
-    20% {
-        opacity: 1;
-    }
-
+    0%,
     100% {
-        opacity: 0;
-
         transform:
-                translate(75px, -70px)
-                scale(.1);
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(25px, -30px);
     }
 }
 
 
-@keyframes fall-four {
+@keyframes particle-float-two {
 
-    0% {
-        opacity: 0;
-
-        transform:
-                translate(65px, 45px)
-                scale(.5);
-    }
-
-    20% {
-        opacity: 1;
-    }
-
+    0%,
     100% {
-        opacity: 0;
-
         transform:
-                translate(-75px, -75px)
-                scale(.1);
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(-30px, 25px);
+    }
+}
+
+
+@keyframes particle-float-three {
+
+    0%,
+    100% {
+        transform:
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(20px, 25px);
+    }
+}
+
+
+@keyframes particle-float-four {
+
+    0%,
+    100% {
+        transform:
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(-25px, -20px);
+    }
+}
+
+
+@keyframes particle-float-five {
+
+    0%,
+    100% {
+        transform:
+                translate(0, 0);
+    }
+
+    50% {
+        transform:
+                translate(15px, 30px);
     }
 }
 
@@ -1034,20 +1350,24 @@
         min-height: 560px;
     }
 
-    .black-hole-space {
+    .cinema-space {
         width:
                 min(
-                        560px,
+                        540px,
                         50vw
                 );
     }
 
-    .black-hole {
-        width: 310px;
-        height: 310px;
+    .cinema-poster {
+        width: 215px;
+        height: 320px;
     }
 }
 
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -1060,15 +1380,22 @@
 
         grid-template-columns: 1fr;
 
-        padding-top: var(--space-8);
-        padding-bottom: var(--space-8);
+        padding-top:
+                var(--space-8);
+
+        padding-bottom:
+                var(--space-8);
+    }
+
+    .hero-content {
+        max-width: 680px;
     }
 
     .hero-visual {
-        min-height: 540px;
+        min-height: 560px;
     }
 
-    .black-hole-space {
+    .cinema-space {
         width:
                 min(
                         600px,
@@ -1078,19 +1405,31 @@
 }
 
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
 
     .hero-container {
-        padding-top: var(--space-7);
+        padding-top:
+                var(--space-7);
     }
 
     .hero-title {
         font-size:
                 clamp(
-                        3.5rem,
-                        18vw,
-                        5.5rem
+                        3.3rem,
+                        17vw,
+                        5.2rem
                 );
+    }
+
+    .hero-description {
+        font-size:
+                var(--font-size-sm);
+
+        line-height: 1.7;
     }
 
     .hero-actions {
@@ -1103,32 +1442,100 @@
         width: 100%;
     }
 
+    .hero-meta {
+        gap: 12px;
+    }
+
+    .hero-meta-number {
+        font-size: 14px;
+    }
+
+    .hero-meta-label {
+        font-size: 8px;
+    }
+
     .hero-visual {
-        min-height: 430px;
+        min-height: 450px;
     }
 
-    .black-hole {
-        width: 235px;
-        height: 235px;
+    .cinema-poster {
+        width: 185px;
+        height: 275px;
     }
 
-    .black-hole-space {
-        width: 100%;
+    .poster-title {
+        font-size: 38px;
+    }
+
+    .floating-card {
+        padding:
+                8px 10px;
+    }
+
+    .floating-card-rating {
+        right: 0;
+    }
+
+    .floating-card-type {
+        left: 0;
     }
 }
 
 
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-meta-divider {
+        height: 22px;
+    }
+
+    .cinema-poster {
+        width: 165px;
+        height: 245px;
+    }
+
+    .poster-content {
+        padding: 20px;
+    }
+
+    .poster-title {
+        font-size: 32px;
+    }
+
+    .floating-card-rating {
+        top: 15%;
+    }
+
+    .floating-card-type {
+        bottom: 17%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
 
-    .black-hole-space,
-    .space-glow,
-    .black-hole-energy,
-    .black-hole-outer-ring,
-    .black-hole-disk,
-    .black-hole-inner-ring,
-    .black-hole-photon-ring,
-    .falling-particle,
-    .star {
+    .hero-content,
+    .hero-meta,
+    .hero-glow,
+    .cinema-space,
+    .cinema-glow,
+    .cinema-orbit,
+    .poster-shine,
+    .floating-card,
+    .cinema-particle,
+    .hero-star {
         animation: none !important;
+    }
+
+    .hero-button,
+    .cinema-poster {
+        transition: none;
     }
 }

@@ -10,54 +10,52 @@ function MainLayout() {
         <div className="app-shell">
 
             {/* =================================================
-                SPACE BACKGROUND
+                CINEMATIC BACKGROUND
             ================================================= */}
 
             <div
-                className="space-background"
+                className="cinematic-background"
                 aria-hidden="true"
             >
 
-                {/* Deep space */}
-
-                <div className="space-depth" />
-
-
-                {/* Nebula */}
-
-                <div className="nebula nebula-one" />
-
-                <div className="nebula nebula-two" />
-
-                <div className="nebula nebula-three" />
+                {/* Deep cinematic depth */}
+                <div className="cinematic-depth" />
 
 
-                {/* Ambient energy */}
+                {/* Ambient glows */}
+                <div className="cinematic-glow cinematic-glow-one" />
 
-                <div className="space-energy energy-one" />
+                <div className="cinematic-glow cinematic-glow-two" />
 
-                <div className="space-energy energy-two" />
-
-
-                {/* Stars */}
-
-                <div className="stars stars-small" />
-
-                <div className="stars stars-medium" />
-
-                <div className="stars stars-large" />
+                <div className="cinematic-glow cinematic-glow-three" />
 
 
-                {/* Moving dust */}
+                {/* Subtle light beams */}
+                <div className="cinematic-beam cinematic-beam-one" />
 
-                <div className="space-dust dust-one" />
+                <div className="cinematic-beam cinematic-beam-two" />
 
-                <div className="space-dust dust-two" />
+
+                {/* Stars / particles */}
+                <div className="cinematic-stars cinematic-stars-small" />
+
+                <div className="cinematic-stars cinematic-stars-medium" />
+
+                <div className="cinematic-stars cinematic-stars-large" />
+
+
+                {/* Floating dust */}
+                <div className="cinematic-dust cinematic-dust-one" />
+
+                <div className="cinematic-dust cinematic-dust-two" />
+
+
+                {/* Film grain */}
+                <div className="film-grain" />
 
 
                 {/* Vignette */}
-
-                <div className="space-vignette" />
+                <div className="cinematic-vignette" />
 
             </div>
 
